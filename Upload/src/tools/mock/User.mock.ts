@@ -1,0 +1,73 @@
+const mockedUsers = [
+    {
+      id: '1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p',
+      username: 'utilisateur1',
+      email: 'utilisateur1@email.com',
+      password: 'motDePasseSecurise1',
+      imgUrl: 'https://exemple.com/image1.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      role: 'USER',
+      files: [],
+      comments: [],
+      commentInteractions: [],
+      fileInteractions: []
+    },
+    {
+      id: '2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q',
+      username: 'utilisateur2',
+      email: 'utilisateur2@email.com',
+      password: 'motDePasseSecurise2',
+      imgUrl: 'https://exemple.com/image2.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      role: 'ADMIN',
+      files: [],
+      comments: [],
+      commentInteractions: [],
+      fileInteractions: []
+    },
+    {
+      id: '3c4d5e6f-7g8h-9i0j-1k2l-3m4n5o6p7q8r',
+      username: 'utilisateur3',
+      email: 'utilisateur3@email.com',
+      password: 'motDePasseSecurise3',
+      imgUrl: 'https://exemple.com/image3.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      role: 'USER',
+      files: [],
+      comments: [],
+      commentInteractions: [],
+      fileInteractions: []
+    },
+    {
+      id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
+      username: 'utilisateur4',
+      email: 'utilisateur4@email.com',
+      password: 'motDePasseSecurise4',
+      imgUrl: 'https://exemple.com/image4.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      role: 'ADMIN',
+      files: [],
+      comments: [],
+      commentInteractions: [],
+      fileInteractions: []
+    },
+    {
+      id: '5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t',
+      username: 'utilisateur5',
+      email: 'utilisateur5@email.com',
+      password: 'motDePasseSecurise5',
+      imgUrl: 'https://exemple.com/image5.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      role: 'USER',
+      files: [],
+      comments: [],
+      commentInteractions: [],
+      fileInteractions: []
+    },
+  ];
+  export default mockedUsers;
