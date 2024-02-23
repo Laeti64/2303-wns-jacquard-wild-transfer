@@ -5,7 +5,6 @@ RUN mkdir app
 WORKDIR /app
 
 COPY package*.json ./
-COPY yarn.lock ./
 COPY ormconfig.js ./
 COPY . ./Uploads
 COPY .gitignore ./
