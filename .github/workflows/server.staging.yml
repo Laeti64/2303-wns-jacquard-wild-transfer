@@ -50,4 +50,4 @@ jobs:
     needs: [build]
     steps:
       - name: Deploy staging
-        run: curl -X GET "https://ops.jacquard1.wns.wilders.dev/hooks/update-staging"
+        run: curl -X GET "https://ops-wildtransfer.pupuce64.ovh/hooks/update-staging"
