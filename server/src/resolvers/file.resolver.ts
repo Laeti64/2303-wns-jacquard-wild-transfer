@@ -56,34 +56,40 @@ export class FileResolver {
         isPublic: isPublicBool,
         author,
       });
+      if (
+        newFile instanceof File &&
+        !fs.existsSync("/app/tempUploads/" + newFile.url)
+      ) {
+        await new FileService().deleteFile(newFile.id);
+      } else {
+        if (newFile && newFile instanceof File) {
+          fs.copyFileSync(
+            "/app/tempUploads/" + newFile.url,
+            "/app/finalUploads/" + newFile.url
+          );
 
-      if (newFile && newFile instanceof File) {
-        fs.copyFileSync(
-          "/app/tempUploads/" + newFile.url,
-          "/app/finalUploads/" + newFile.url
-        );
-
-        if (fs.existsSync("/app/finalUploads/" + newFile.url)) {
-          await new FileService()
-            .updateFile({
-              id: newFile.id,
-              url: "/app/finalUploads/" + newFile.url,
-            })
-            .then(
-              await fs.rm(
-                "/app/tempUploads/" + newFile.url,
-                function (err: any) {
-                  if (err) {
-                    console.log("ERROR: " + err);
-                  } else {
-                    console.log(`File ${newFile.url} deleted successfully`);
+          if (fs.existsSync("/app/finalUploads/" + newFile.url)) {
+            await new FileService()
+              .updateFile({
+                id: newFile.id,
+                url: "/app/finalUploads/" + newFile.url,
+              })
+              .then(
+                await fs.rm(
+                  "/app/tempUploads/" + newFile.url,
+                  function (err: any) {
+                    if (err) {
+                      console.log("ERROR: " + err);
+                    } else {
+                      console.log(`File ${newFile.url} deleted successfully`);
+                    }
                   }
-                }
-              )
-            );
+                )
+              );
+          }
         }
+        return newFile;
       }
-      return newFile;
     }
     return { success: false, message: "something went wrong" };
   }
