@@ -45,9 +45,9 @@ jobs:
           file: ./server/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_SERVER_STAGING_IMAGE_NAME }}:latest
-  deployment:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Deploy staging
-        run: curl -X GET "https://ops.wildtransfer.pupuce64.ovh/hooks/update-staging"
+  # deployment:
+  #   runs-on: ubuntu-latest
+  #   needs: [build]
+  #   steps:
+  #     - name: Deploy staging
+  #       run: curl -X GET "https://ops.wildtransfer.pupuce64.ovh/hooks/update-staging"
