@@ -16,7 +16,7 @@ router.post("/files", uploadMiddleware, async (req, res) => {
   if (!req.files || req.files.length === 0) {
     return res.status(400).send("Aucun fichier n'a été fourni.");
   }
-
+  console.log("je suis dans la route post files", req.files);
   const fileDataArray: any[] = [];
   const filesLength = req.files.length as number;
   const files: Record<number | string, Express.Multer.File> = req.files as any;
