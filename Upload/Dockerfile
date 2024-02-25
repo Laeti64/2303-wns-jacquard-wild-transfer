@@ -11,3 +11,6 @@ COPY .gitignore ./
 RUN yarn install
 COPY src src
 
+RUN chmod -R 755 ./Uploads
+
+EXPOSE 5005
